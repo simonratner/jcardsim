@@ -63,10 +63,14 @@ public class KeyBuilderProxy {
                 key = new RSAKeyImpl(false, keyLength);
                 break;
 
+            case KeyBuilder.TYPE_RSA_PRIVATE_TRANSIENT_RESET:
+            case KeyBuilder.TYPE_RSA_PRIVATE_TRANSIENT_DESELECT:
             case KeyBuilder.TYPE_RSA_PRIVATE:
                 key = new RSAKeyImpl(true, keyLength);
                 break;
 
+            case KeyBuilder.TYPE_RSA_CRT_PRIVATE_TRANSIENT_RESET:
+            case KeyBuilder.TYPE_RSA_CRT_PRIVATE_TRANSIENT_DESELECT:
             case KeyBuilder.TYPE_RSA_CRT_PRIVATE:
                 key = new RSAPrivateCrtKeyImpl(keyLength);
                 break;
@@ -76,6 +80,8 @@ public class KeyBuilderProxy {
                 key = new DSAPublicKeyImpl(keyLength);
                 break;
 
+            case KeyBuilder.TYPE_DSA_PRIVATE_TRANSIENT_RESET:
+            case KeyBuilder.TYPE_DSA_PRIVATE_TRANSIENT_DESELECT:
             case KeyBuilder.TYPE_DSA_PRIVATE:
                 key = new DSAPrivateKeyImpl(keyLength);
                 break;
@@ -84,6 +90,9 @@ public class KeyBuilderProxy {
             case KeyBuilder.TYPE_EC_F2M_PUBLIC:
                 key = new ECPublicKeyImpl(keyType, keyLength);
                 break;
+
+            case KeyBuilder.TYPE_EC_F2M_PRIVATE_TRANSIENT_RESET:
+            case KeyBuilder.TYPE_EC_F2M_PRIVATE_TRANSIENT_DESELECT:
             case KeyBuilder.TYPE_EC_F2M_PRIVATE:
                 key = new ECPrivateKeyImpl(keyType, keyLength);
                 break;
@@ -91,6 +100,9 @@ public class KeyBuilderProxy {
             case KeyBuilder.TYPE_EC_FP_PUBLIC:
                 key = new ECPublicKeyImpl(keyType, keyLength);
                 break;
+            
+            case KeyBuilder.TYPE_EC_FP_PRIVATE_TRANSIENT_RESET:
+            case KeyBuilder.TYPE_EC_FP_PRIVATE_TRANSIENT_DESELECT:
             case KeyBuilder.TYPE_EC_FP_PRIVATE:
                 key = new ECPrivateKeyImpl(keyType, keyLength);
                 break;
